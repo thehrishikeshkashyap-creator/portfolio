@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Hrishikesh Das Kashyap - Growth Marketer, Performance Marketing and AI Automation Specialist."/>
+<meta name="author" content="Hrishikesh Das Kashyap"/>
+<meta property="og:title" content="Hrishikesh Das Kashyap - Growth Marketer"/>
+<meta property="og:description" content="Full-stack growth marketer with 3+ years scaling SaaS brands through paid ads, SEO, AI automation, and lifecycle email marketing."/>
+<meta property="og:type" content="website"/>
+<title>Hrishikesh Das Kashyap - Growth Marketer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Inter:wght@300;400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#07080A;--s1:#0D0F12;--card:#14161B;--br:#1C1F26;--br2:#252830;
+  --cyan:#00E5FF;--cyan2:#33ECFF;--cyan-dim:rgba(0,229,255,0.08);
+  --orange:#FF6B35;--orange-dim:rgba(255,107,53,0.1);
+  --white:#EEEEF2;--body:#7A7D85;--muted:#3A3D45;
+  --disp:'Unbounded','Arial Black',sans-serif;--sans:'Inter','Arial',sans-serif;
+}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:14px;line-height:1.7;overflow-x:hidden;cursor:none;}
+#cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;}
+#cd{width:6px;height:6px;background:var(--cyan);border-radius:50%;position:absolute;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--cyan);}
+#cr{width:30px;height:30px;border:1.5px solid rgba(0,229,255,0.5);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:width .15s,height .15s,border-color .15s,background .15s;}
+body:has(a:hover) #cr,body:has(button:hover) #cr{width:50px;height:50px;border-color:var(--cyan);background:rgba(0,229,255,0.04);}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--orange));}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:rgba(7,8,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--br);}
+.nav-logo{font-family:var(--disp);font-size:15px;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:0.04em;}
+.nav-logo span{color:var(--cyan);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-family:var(--disp);font-size:9px;font-weight:600;color:var(--muted);text-decoration:none;letter-spacing:0.18em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--cyan);}
+.nav-pill{font-family:var(--disp);font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 22px;background:transparent;border:1.5px solid var(--cyan);color:var(--cyan);text-decoration:none;transition:background .2s,color .2s;display:flex;align-items:center;gap:6px;}
+.nav-pill:hover{background:var(--cyan);color:var(--bg);}
+#hero{min-height:100vh;padding-top:64px;position:relative;overflow:hidden;display:flex;flex-direction:column;border-bottom:1px solid var(--br);}
+.blob1{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(0,229,255,0.07) 0%,transparent 70%);pointer-events:none;}
+.blob2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.05) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 56px 40px;position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--cyan-dim);border:1px solid rgba(0,229,255,0.2);padding:7px 16px;margin-bottom:36px;width:fit-content;opacity:0;animation:slideup .6s .1s forwards;}
+.hero-badge-dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,229,255,0.4);}50%{box-shadow:0 0 0 6px rgba(0,229,255,0);}}
+.hero-badge-text{font-family:var(--disp);font-size:9px;font-weight:700;color:var(--cyan);letter-spacing:0.2em;text-transform:uppercase;}
+.hero-name{font-family:var(--disp);font-size:clamp(52px,8.5vw,120px);font-weight:900;line-height:0.95;letter-spacing:-0.02em;text-transform:uppercase;color:var(--white);margin-bottom:28px;opacity:0;animation:slideup .6s .2s forwards;}
+.hero-name .accent{color:var(--cyan);display:block;}
+.hero-name .sub-accent{color:var(--orange);}
+.hero-row{display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:end;opacity:0;animation:slideup .6s .4s forwards;}
+.hero-desc{font-size:15px;font-weight:300;color:var(--body);line-height:1.85;max-width:520px;}
+.hero-desc strong{color:var(--white);font-weight:500;}
+.hero-actions{display:flex;flex-direction:column;gap:20px;align-items:flex-end;}
+.hero-stats{display:flex;gap:32px;}
+.hs{text-align:right;}
+.hs-n{font-family:var(--disp);font-size:32px;font-weight:900;color:var(--cyan);line-height:1;}
+.hs-l{font-size:9px;font-weight:400;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px;font-family:var(--disp);}
+.hero-btns{display:flex;gap:10px;}
+.hero-ticker{background:var(--cyan);padding:14px 56px;overflow:hidden;position:relative;z-index:2;}
+.ticker-wrap{display:flex;animation:ticker 32s linear infinite;width:max-content;}
+.t-item{font-family:var(--disp);font-size:10px;font-weight:700;color:var(--bg);letter-spacing:0.16em;text-transform:uppercase;white-space:nowrap;padding:0 40px;display:flex;align-items:center;gap:12px;}
+.t-item::after{content:'◆';font-size:7px;opacity:0.4;}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes slideup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.btn-cyan{font-family:var(--disp);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:13px 24px;background:var(--cyan);color:var(--bg);text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;display:inline-block;cursor:pointer;white-space:nowrap;}
+.btn-cyan:hover{background:var(--cyan2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,255,0.25);}
+.btn-ghost{font-family:var(--disp);font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:12px 24px;border:1.5px solid var(--br2);color:var(--body);text-decoration:none;transition:border-color .2s,color .2s,transform .15s;display:inline-block;cursor:pointer;white-space:nowrap;}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);}
+.wrap{max-width:1200px;margin:0 auto;padding:96px 56px;}
+.slabel{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-family:var(--disp);font-size:9px;font-weight:700;color:var(--cyan);letter-spacing:0.25em;text-transform:uppercase;}
+.slabel::before{content:'';width:18px;height:2px;background:var(--cyan);}
+.stitle{font-family:var(--disp);font-size:clamp(32px,4vw,54px);font-weight:900;color:var(--white);line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:12px;}
+.stitle span{color:var(--cyan);}.stitle .or{color:var(--orange);}
+.ssub{font-size:15px;font-weight:300;color:var(--body);max-width:520px;line-height:1.8;margin-bottom:52px;}
+.r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.r.on{opacity:1;transform:none;}
+#metrics{background:var(--s1);border-bottom:1px solid var(--br);}
+.met-grid{display:grid;grid-template-columns:repeat(7,1fr);border-left:1px solid var(--br);}
+.mi{padding:36px 18px;text-align:center;border-right:1px solid var(--br);position:relative;overflow:hidden;transition:background .25s;}
+.mi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cyan),var(--orange));transform:scaleX(0);transition:transform .35s;}
+.mi:hover{background:var(--card);}.mi:hover::after{transform:scaleX(1);}.mi:last-child{border-right:none;}
+.mn{font-family:var(--disp);font-size:32px;font-weight:900;color:var(--cyan);line-height:1;letter-spacing:-0.02em;margin-bottom:8px;}
+.ml{font-family:var(--disp);font-size:8px;font-weight:600;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;line-height:1.4;}
+#about{border-bottom:1px solid var(--br);}
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:start;}
+.about-body p{font-size:15px;font-weight:300;color:var(--body);line-height:1.9;margin-bottom:18px;}
+.about-body strong{color:var(--white);font-weight:500;}.about-body .cy{color:var(--cyan);}
+.fact{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--br);}
+.fact:first-child{border-top:1px solid var(--br);}
+.fk{font-family:var(--disp);font-size:8px;font-weight:700;color:var(--muted);letter-spacing:0.16em;text-transform:uppercase;}
+.fv{font-family:var(--disp);font-size:11px;font-weight:600;color:var(--white);letter-spacing:0.02em;}
+#skills{background:var(--s1);border-bottom:1px solid var(--br);}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--br);}
+.sg{padding:28px 26px;border-right:1px solid var(--br);border-bottom:1px solid var(--br);transition:background .25s;}
+.sg:hover{background:var(--card);}
+.sg:nth-child(3n){border-right:none;}.sg:nth-last-child(-n+3){border-bottom:none;}
+.sg-l{font-family:var(--disp);font-size:8px;font-weight:700;color:var(--cyan);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-size:11px;font-weight:400;color:var(--body);border:1px solid var(--br2);padding:3px 9px;letter-spacing:0.03em;transition:all .2s;font-family:var(--sans);}
+.tag:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim);}
+#techseo{border-bottom:1px solid var(--br);}
+.ts-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--br);}
+.tsc{padding:36px 28px;border-right:1px solid var(--br);border-bottom:1px solid var(--br);transition:background .25s;position:relative;overflow:hidden;}
+.tsc:hover{background:var(--card);}
+.tsc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--cyan-dim),transparent 60%);opacity:0;transition:opacity .3s;}
+.tsc:hover::before{opacity:1;}
+.tsc:nth-child(3n){border-right:none;}.tsc:nth-last-child(-n+3){border-bottom:none;}
+.tsn{font-family:var(--disp);font-size:11px;font-weight:700;color:var(--orange);letter-spacing:0.12em;margin-bottom:16px;}
+.tsc h3{font-family:var(--disp);font-size:15px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:10px;}
+.tsc p{font-size:13px;font-weight:300;color:var(--body);line-height:1.75;}
+#projects{background:var(--s1);border-bottom:1px solid var(--br);}
+.plist{border:1px solid var(--br);}
+.pi{border-bottom:1px solid var(--br);display:grid;grid-template-columns:80px 1fr;gap:28px;padding:40px 36px;transition:background .25s;position:relative;overflow:hidden;}
+.pi:last-child{border-bottom:none;}.pi:hover{background:var(--card);}
+.pi::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--cyan),var(--orange));transform:scaleY(0);transform-origin:top;transition:transform .4s ease;}
+.pi:hover::before{transform:scaleY(1);}
+.pnum{font-family:var(--disp);font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:0.12em;padding-top:4px;}
+.ph{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
+.pt{font-family:var(--disp);font-size:17px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.01em;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;}
+.ptag{font-family:var(--disp);font-size:8px;font-weight:700;color:var(--orange);background:var(--orange-dim);border:1px solid rgba(255,107,53,0.25);padding:3px 8px;letter-spacing:0.1em;text-transform:uppercase;}
+.pdesc{font-size:13px;font-weight:300;color:var(--body);line-height:1.75;margin-bottom:14px;max-width:700px;}
+.pdesc strong{color:var(--white);font-weight:500;}
+.pbul{list-style:none;margin-bottom:14px;}
+.pbul li{font-size:13px;font-weight:300;color:var(--body);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(28,31,38,.7);line-height:1.65;}
+.pbul li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:11px;}
+#experience{border-bottom:1px solid var(--br);}
+.tli{display:grid;grid-template-columns:220px 1fr;gap:48px;padding:40px 0;border-bottom:1px solid var(--br);align-items:start;}
+.tli:last-child{border-bottom:none;}
+.tld{font-family:var(--disp);font-size:9px;font-weight:700;color:var(--cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.tlco{font-family:var(--disp);font-size:14px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;}
+.tlloc{font-size:11px;font-weight:300;color:var(--muted);margin-top:4px;}
+.tlr{font-family:var(--disp);font-size:16px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.01em;margin-bottom:14px;}
+.tlb{list-style:none;}
+.tlb li{font-size:13px;font-weight:300;color:var(--body);padding:4px 0 4px 16px;position:relative;line-height:1.7;border-bottom:1px solid rgba(28,31,38,.5);}
+.tlb li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:11px;}
+.tlb li strong{color:var(--white);font-weight:500;}
+#certifications{background:var(--s1);border-bottom:1px solid var(--br);}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--br);}
+.cc{padding:26px 24px;border-right:1px solid var(--br);border-bottom:1px solid var(--br);transition:background .25s;position:relative;overflow:hidden;}
+.cc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cyan),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.cc:hover{background:var(--card);}.cc:hover::after{transform:scaleX(1);}
+.cc:nth-child(3n){border-right:none;}.cc:nth-last-child(-n+3){border-bottom:none;}
+.cdot{width:7px;height:7px;background:var(--cyan);margin-bottom:12px;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);}
+.cn{font-family:var(--disp);font-size:13px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.01em;margin-bottom:6px;line-height:1.25;}
+.cm{font-size:11px;font-weight:300;color:var(--muted);letter-spacing:0.03em;}
+#education{border-bottom:1px solid var(--br);}
+.edu{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--br);}
+.ecard{padding:40px 36px;border-right:1px solid var(--br);transition:background .25s;position:relative;overflow:hidden;}
+.ecard:last-child{border-right:none;}.ecard:hover{background:var(--card);}
+.ecard::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--cyan),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.ecard:hover::before{transform:scaleX(1);}
+.euni{font-family:var(--disp);font-size:8px;font-weight:700;color:var(--cyan);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;}
+.edeg{font-family:var(--disp);font-size:20px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.01em;line-height:1.15;margin-bottom:8px;}
+.eyr{font-size:12px;font-weight:300;color:var(--muted);margin-bottom:18px;}
+.ebadge{display:inline-flex;align-items:center;gap:6px;font-family:var(--disp);font-size:10px;font-weight:700;color:var(--bg);background:var(--cyan);padding:7px 16px;letter-spacing:0.1em;text-transform:uppercase;}
+#contact{padding:100px 56px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--br);}
+.cblob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,229,255,0.04) 0%,transparent 70%);pointer-events:none;}
+.cwrap{max-width:640px;margin:0 auto;position:relative;z-index:2;}
+.ctag{font-family:var(--disp);font-size:9px;font-weight:700;color:var(--cyan);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:20px;}
+.ch{font-family:var(--disp);font-size:clamp(36px,5.5vw,72px);font-weight:900;color:var(--white);text-transform:uppercase;letter-spacing:-0.02em;line-height:1.0;margin-bottom:16px;}
+.ch span{color:var(--cyan);}.ch .or{color:var(--orange);}
+.csub{font-size:14px;font-weight:300;color:var(--body);line-height:1.8;margin-bottom:40px;}
+.cbtns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.crow{display:flex;justify-content:center;gap:56px;padding-top:36px;border-top:1px solid var(--br);}
+.crl{font-family:var(--disp);font-size:8px;font-weight:700;color:var(--muted);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:5px;}
+.crv{font-size:13px;font-weight:300;color:var(--body);}
+.crv a{color:inherit;text-decoration:none;}.crv a:hover{color:var(--cyan);}
+footer{background:var(--s1);border-top:1px solid var(--br);padding:20px 56px;display:flex;justify-content:space-between;align-items:center;}
+.ft{font-family:var(--disp);font-size:9px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.ft span{color:var(--cyan);}.ft .or{color:var(--orange);}
+@media(max-width:1024px){
+  nav{padding:0 24px;}.wrap{padding:72px 24px;}.hero-inner{padding:40px 24px 32px;}
+  .hero-ticker{padding:12px 24px;}#contact{padding:72px 24px;}footer{padding:20px 24px;}
+  .met-grid{grid-template-columns:repeat(4,1fr);}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .sk-grid,.ts-grid,.cg{grid-template-columns:repeat(2,1fr);}
+  .sg:nth-child(3n){border-right:1px solid var(--br);}.sg:nth-child(2n){border-right:none;}
+  .sg:nth-last-child(-n+3){border-bottom:1px solid var(--br);}.sg:nth-last-child(-n+2){border-bottom:none;}
+  .tsc:nth-child(3n){border-right:1px solid var(--br);}.tsc:nth-child(2n){border-right:none;}
+  .cc:nth-child(3n){border-right:1px solid var(--br);}.cc:nth-child(2n){border-right:none;}
+  .tli{grid-template-columns:1fr;gap:12px;}
+  .edu{grid-template-columns:1fr;}.ecard{border-right:none;border-bottom:1px solid var(--br);}
+  .pi{grid-template-columns:48px 1fr;gap:16px;}
+  .hero-row{grid-template-columns:1fr;}.hero-actions{align-items:flex-start;}
+}
+@media(max-width:640px){
+  .nav-links,.nav-pill{display:none;}.met-grid{grid-template-columns:repeat(2,1fr);}
+  .sk-grid,.ts-grid,.cg{grid-template-columns:1fr;}.sg,.tsc,.cc{border-right:none!important;}
+  .crow{flex-direction:column;gap:20px;}footer{flex-direction:column;gap:8px;text-align:center;}
+  body{cursor:auto;}#cur{display:none;}
+}
+</style>
+</head>
+<body>
+<div id="cur"><div id="cr"></div><div id="cd"></div></div>
+
+<nav>
+  <a href="#hero" class="nav-logo">HDK<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:thehrishikeshkashyap@gmail.com" class="nav-pill">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="blob1"></div><div class="blob2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span class="hero-badge-text">Open to New Roles &nbsp;&#183;&nbsp; Remote Worldwide</span>
+    </div>
+    <h1 class="hero-name">Hrishikesh<span class="accent">Das <span class="sub-accent">Kashyap</span></span></h1>
+    <div class="hero-row">
+      <p class="hero-desc">Full-stack growth marketer with <strong>3+ years</strong> scaling SaaS brands, creator businesses, and gaming channels through <strong>paid ads, technical SEO, n8n AI automation,</strong> and lifecycle email marketing. Based in India. Working globally.</p>
+      <div class="hero-actions">
+        <div class="hero-stats">
+          <div class="hs"><div class="hs-n">3+</div><div class="hs-l">Years<br/>Experience</div></div>
+          <div class="hs"><div class="hs-n">6</div><div class="hs-l">Markets<br/>Managed</div></div>
+          <div class="hs"><div class="hs-n">10+</div><div class="hs-l">Platforms<br/>Certified</div></div>
+        </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-cyan">View Work</a>
+          <a href="mailto:thehrishikeshkashyap@gmail.com" class="btn-ghost">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <div class="ticker-wrap">
+      <span class="t-item">Google Ads</span><span class="t-item">Meta Ads</span><span class="t-item">Reddit Ads</span><span class="t-item">Technical SEO</span><span class="t-item">AI SEO</span><span class="t-item">n8n AI Agents</span><span class="t-item">Klaviyo</span><span class="t-item">Facebook Pixel</span><span class="t-item">Screaming Frog</span><span class="t-item">Ahrefs</span><span class="t-item">SEMrush</span><span class="t-item">OpenAI</span><span class="t-item">WordPress</span><span class="t-item">Motion Graphics</span><span class="t-item">YouTube SEO</span><span class="t-item">Email Automation</span><span class="t-item">Social Media Marketing</span><span class="t-item">Google Ads</span><span class="t-item">Meta Ads</span><span class="t-item">Reddit Ads</span><span class="t-item">Technical SEO</span><span class="t-item">AI SEO</span><span class="t-item">n8n AI Agents</span><span class="t-item">Klaviyo</span><span class="t-item">Facebook Pixel</span><span class="t-item">Screaming Frog</span><span class="t-item">Ahrefs</span><span class="t-item">SEMrush</span><span class="t-item">OpenAI</span><span class="t-item">WordPress</span><span class="t-item">Motion Graphics</span><span class="t-item">YouTube SEO</span><span class="t-item">Email Automation</span><span class="t-item">Social Media Marketing</span>
+    </div>
+  </div>
+</section>
+
+<section id="metrics">
+  <div class="met-grid r">
+    <div class="mi"><div class="mn">3+</div><div class="ml">Years<br/>Experience</div></div>
+    <div class="mi"><div class="mn">6</div><div class="ml">International<br/>Markets</div></div>
+    <div class="mi"><div class="mn">3</div><div class="ml">Companies<br/>Supported</div></div>
+    <div class="mi"><div class="mn">10+</div><div class="ml">Certifications<br/>Earned</div></div>
+    <div class="mi"><div class="mn">5+</div><div class="ml">Automation<br/>Workflows Built</div></div>
+    <div class="mi"><div class="mn">2</div><div class="ml">SaaS Apps<br/>Launched</div></div>
+    <div class="mi"><div class="mn">1M+</div><div class="ml">Creator<br/>Community Scaled</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="slabel r">About</div>
+    <h2 class="stitle r">The Marketer Who<br/><span>Builds the Engine</span></h2>
+    <div class="about-grid r">
+      <div class="about-body">
+        <p>I'm a performance-driven growth marketer who combines <strong>data, creativity, and AI</strong> to help businesses scale faster. With 3+ years across SaaS companies, creator brands, and international remote teams, I operate across the full marketing stack.</p>
+        <p>What sets me apart: I don't just run campaigns. I <strong>build the infrastructure behind them</strong> — tracking systems, n8n AI agents, automation workflows, and SEO content engines that compound over time.</p>
+        <p>Currently working with <strong>PAJ GPS (Germany)</strong> as Social Media Specialist, driving growth across two side ventures: <strong class="cy">Call the Service</strong> — a B2B restaurant management SaaS app — and <strong class="cy">QR Innovation</strong> — an IT solutions company turning ideas into apps for businesses. Responsible for paid media, SEO, automation, and full-funnel strategy across international markets.</p>
+      </div>
+      <div>
+        <div class="fact"><span class="fk">Current Role</span><span class="fv">Social Media Specialist</span></div>
+        <div class="fact"><span class="fk">Company</span><span class="fv">PAJ GPS, Germany</span></div>
+        <div class="fact"><span class="fk">Projects</span><span class="fv">Call the Service &amp; QR Innovation</span></div>
+        <div class="fact"><span class="fk">Experience</span><span class="fv">3+ Years</span></div>
+        <div class="fact"><span class="fk">Location</span><span class="fv">Guwahati, India</span></div>
+        <div class="fact"><span class="fk">Education</span><span class="fv">M.Sc. Economics 8.3</span></div>
+        <div class="fact"><span class="fk">Availability</span><span class="fv">Open to New Roles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="slabel r">Expertise</div>
+    <h2 class="stitle r">Skills &amp; <span>Tools</span></h2>
+    <p class="ssub r">A complete growth stack from technical SEO and paid acquisition to AI automation and creative design.</p>
+    <div class="sk-grid r">
+      <div class="sg"><div class="sg-l">Paid Advertising</div><div class="tags"><span class="tag">Google Ads</span><span class="tag">Meta Ads Manager</span><span class="tag">Facebook Pixel</span><span class="tag">Reddit Ads</span><span class="tag">Ads SDK</span><span class="tag">Conversion Tracking</span><span class="tag">Performance Max</span><span class="tag">App Campaigns</span><span class="tag">A/B Testing</span></div></div>
+      <div class="sg"><div class="sg-l">SEO &amp; Content</div><div class="tags"><span class="tag">Technical SEO</span><span class="tag">AI SEO</span><span class="tag">AEO &amp; GEO</span><span class="tag">Ahrefs</span><span class="tag">SEMrush</span><span class="tag">Screaming Frog</span><span class="tag">Google Search Console</span><span class="tag">Yoast</span><span class="tag">XML Sitemaps</span><span class="tag">Site Audits</span></div></div>
+      <div class="sg"><div class="sg-l">AI &amp; Automation</div><div class="tags"><span class="tag">n8n</span><span class="tag">AI Agents</span><span class="tag">OpenAI</span><span class="tag">Zapier</span><span class="tag">Cold Email Agents</span><span class="tag">Workflow Design</span><span class="tag">Marketing Automation</span><span class="tag">ChatGPT</span></div></div>
+      <div class="sg"><div class="sg-l">Email &amp; Lifecycle</div><div class="tags"><span class="tag">Klaviyo</span><span class="tag">ConvertKit</span><span class="tag">Mailchimp</span><span class="tag">Email Automation</span><span class="tag">Segmentation</span><span class="tag">Lifecycle Campaigns</span><span class="tag">Drip Sequences</span></div></div>
+      <div class="sg"><div class="sg-l">Social Media Marketing</div><div class="tags"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">Reddit</span><span class="tag">LinkedIn</span><span class="tag">TikTok</span><span class="tag">YouTube</span><span class="tag">Content Planning</span><span class="tag">Community Growth</span><span class="tag">10+ Platforms</span></div></div>
+      <div class="sg"><div class="sg-l">Analytics &amp; CRO</div><div class="tags"><span class="tag">Google Analytics 4</span><span class="tag">Meta Insights</span><span class="tag">Performance Dashboards</span><span class="tag">WordPress</span><span class="tag">CRO</span><span class="tag">Landing Pages</span><span class="tag">GTM</span></div></div>
+      <div class="sg"><div class="sg-l">Creative &amp; Brand</div><div class="tags"><span class="tag">Motion Graphics</span><span class="tag">Social Media Design</span><span class="tag">Brand Identity</span><span class="tag">YouTube SEO</span><span class="tag">Script Writing</span><span class="tag">Content Strategy</span><span class="tag">Canva</span><span class="tag">Podcast Editing</span></div></div>
+      <div class="sg"><div class="sg-l">App &amp; SaaS Marketing</div><div class="tags"><span class="tag">App Store Marketing</span><span class="tag">SaaS Growth</span><span class="tag">B2B Marketing</span><span class="tag">Go-To-Market</span><span class="tag">Product Launch</span><span class="tag">Influencer Collaborations</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="techseo">
+  <div class="wrap">
+    <div class="slabel r">Deep Dive</div>
+    <h2 class="stitle r">Technical SEO <span>Capabilities</span></h2>
+    <p class="ssub r">Beyond writing content — I understand the technical foundation that makes SEO work.</p>
+    <div class="ts-grid r">
+      <div class="tsc"><div class="tsn">01</div><h3>Site Audits</h3><p>Full technical site audits using Screaming Frog, Ahrefs, and SEMrush identifying crawl errors, broken links, redirect chains, duplicate content, and indexation issues.</p></div>
+      <div class="tsc"><div class="tsn">02</div><h3>XML Sitemaps</h3><p>Creating and submitting XML sitemaps via Google Search Console. Ensuring all priority pages are crawlable and indexed with proper priority and changefreq settings.</p></div>
+      <div class="tsc"><div class="tsn">03</div><h3>Screaming Frog</h3><p>Deep crawl analysis covering page titles, meta descriptions, H1 tags, status codes, response times, canonical tags, and complete internal link structure mapping.</p></div>
+      <div class="tsc"><div class="tsn">04</div><h3>Google Search Console</h3><p>Monitoring impressions, clicks, CTR, and average position. Identifying drops, Core Web Vitals issues, mobile usability errors, and coverage problems.</p></div>
+      <div class="tsc"><div class="tsn">05</div><h3>On-Page Optimization</h3><p>Title tags, meta descriptions, canonical tags, schema markup, image optimization, internal linking strategy, and page speed improvements.</p></div>
+      <div class="tsc"><div class="tsn">06</div><h3>Ahrefs &amp; SEMrush</h3><p>Backlink analysis, keyword gap analysis, competitor research, SERP feature tracking, and rank monitoring across multiple domains and geographies.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="slabel r">Work</div>
+    <h2 class="stitle r">Featured <span>Projects</span></h2>
+    <p class="ssub r">Real campaigns, real results across paid, organic, automation, and creative channels.</p>
+    <div class="plist r">
+      <div class="pi">
+        <div class="pnum">01</div>
+        <div>
+          <div class="ph"><div class="pt">Call the Service &amp; QR Innovation — Growth Under PAJ GPS</div><div class="ptags"><span class="ptag">PAJ GPS</span><span class="ptag">Google Ads</span><span class="ptag">Meta Ads</span><span class="ptag">SEO</span><span class="ptag">n8n AI</span><span class="ptag">Pixel</span></div></div>
+          <p class="pdesc">As Social Media Specialist at PAJ GPS (Germany), I manage full-stack growth for two side projects: <strong>Call the Service</strong> — a B2B restaurant management and QR ordering SaaS app — and <strong>QR Innovation</strong> — an IT solutions provider that builds apps for businesses and turns ideas into digital products. Responsible for end-to-end paid media, SEO, automation infrastructure, and conversion tracking across multiple international markets.</p>
+          <ul class="pbul">
+            <li>Planned and launched Google App campaigns across international markets including Thailand, Turkey, UK and EU — managing full campaign architecture, audience targeting, and creative strategy</li>
+            <li>Set up and managed Facebook Pixel and Ads SDK event tracking infrastructure, enabling accurate attribution across key app milestones including activations, installs, calls, and registrations</li>
+            <li>Ran Meta and Instagram ad campaigns across multiple markets, managing creative direction, audience segmentation, CPR optimization, and performance reporting</li>
+            <li>Developed and executed SEO content strategy that drove significant organic growth — building topical authority through keyword research, on-page optimization, and Search Console monitoring</li>
+            <li>Built a multi-agent n8n AI cold email automation system: Research Agent gathering prospect data, three parallel sending pipelines, and an automated Unsubscribe handler</li>
+            <li>Managed full Facebook Business Suite, Meta Business Portfolio, and Events Manager for both brands, ensuring clean data hygiene and campaign governance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pi">
+        <div class="pnum">02</div>
+        <div>
+          <div class="ph"><div class="pt">n8n AI Agents — Cold Email and YouTube Automation</div><div class="ptags"><span class="ptag">n8n</span><span class="ptag">OpenAI</span><span class="ptag">AI Agents</span><span class="ptag">Automation</span></div></div>
+          <p class="pdesc">Built two sophisticated multi-agent automation workflows eliminating manual work and scaling marketing operations at speed.</p>
+          <ul class="pbul">
+            <li>Cold Email Agent: Research Agent + 3 parallel sending pipelines + Unsubscribe handler</li>
+            <li>YouTube Agent: OpenAI LLM + YouTube Search tool + window buffer memory</li>
+            <li>Loop-based video data pipeline with group and save-to-memory nodes</li>
+            <li>Modular architecture designed for easy scaling and modification</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pi">
+        <div class="pnum">03</div>
+        <div>
+          <div class="ph"><div class="pt">IamBolt Gaming — YouTube Channel Growth Strategy</div><div class="ptags"><span class="ptag">YouTube SEO</span><span class="ptag">Script Writing</span><span class="ptag">Analytics</span><span class="ptag">Motion</span></div></div>
+          <p class="pdesc">Helped scale a GTA/ARK gaming channel from a regional audience to a large subscriber base through systematic SEO, psychological retention scripting, and data-driven content iteration.</p>
+          <ul class="pbul">
+            <li>Wrote 100+ retention-focused video scripts with strong hooks, mid-video pattern interrupts, and strategic CTAs to maximize watch time and click-through rate</li>
+            <li>Optimized every video's metadata — titles, descriptions, tags, thumbnails — for both YouTube search and Google discovery</li>
+            <li>Analyzed CTR curves, audience retention graphs, and watch time data after every upload to iterate the content strategy continuously</li>
+            <li>Designed motion graphics for the IAMBOLT merch launch brand video and built out complete merchandise visual identity</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pi">
+        <div class="pnum">04</div>
+        <div>
+          <div class="ph"><div class="pt">The Velvet Pour — Social Media Creative Campaigns</div><div class="ptags"><span class="ptag">Social Design</span><span class="ptag">Brand Identity</span><span class="ptag">Copy</span></div></div>
+          <p class="pdesc">Designed and produced high-converting promotional social media creatives for a bar and nightlife brand.</p>
+          <ul class="pbul">
+            <li>Cocktail Night — dark moody aesthetic, gold typography, $17 admission CTA</li>
+            <li>Ladies Night — free cocktail offer, Thursday 10–12AM timing</li>
+            <li>Beer O'Clock — warm photography tones, "Grab yours now" CTA</li>
+            <li>Consistent @thevelvetpour visual identity across all three posts</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pi">
+        <div class="pnum">05</div>
+        <div>
+          <div class="ph"><div class="pt">SEO Content — Helplama and Saufter.io</div><div class="ptags"><span class="ptag">SEO Writing</span><span class="ptag">Ahrefs</span><span class="ptag">SEMrush</span></div></div>
+          <p class="pdesc">Published SEO-optimized articles on real SaaS platforms targeting high-intent commercial keywords.</p>
+          <ul class="pbul">
+            <li>Top 10 Tools to Create Email Newsletter in 2025 — Saufter.io</li>
+            <li>The 7 Best AI Email Assistants In 2025 — Saufter.io</li>
+            <li>12 Best SEO Agencies In New York — Helplama</li>
+            <li>Top 10 Social Media Marketing Firms in Nashville — Helplama</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pi">
+        <div class="pnum">06</div>
+        <div>
+          <div class="ph"><div class="pt">Email Lifecycle Automation — Zenplugins</div><div class="ptags"><span class="ptag">Email Auto</span><span class="ptag">Lifecycle</span><span class="ptag">Campaign</span></div></div>
+          <p class="pdesc">Built a multi-trigger email automation campaign for a WordPress plugin SaaS brand — complete flow from trigger to conversion.</p>
+          <ul class="pbul">
+            <li>3 entry triggers: First persona entered, Attribute change, Tag applied</li>
+            <li>Time delay node + promotional email: Unlock 8% Extra Off Yearly Plans</li>
+            <li>Wrote urgency copy — Fall Sale messaging, upgrade benefits, feature highlights</li>
+            <li>Complete trigger to delay to email to exit flow architecture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="slabel r">Career</div>
+    <h2 class="stitle r">Work <span>Experience</span></h2>
+    <div class="r">
+      <div class="tli">
+        <div><div class="tld">Sep 2025 - Present</div><div class="tlco">PAJ GPS</div><div class="tlloc">Germany - Remote</div></div>
+        <div>
+          <div class="tlr">Social Media Specialist — Growth and Performance</div>
+          <ul class="tlb">
+            <li>Driving growth for two side projects: <strong>Call the Service</strong> (restaurant management SaaS) and <strong>QR Innovation</strong> (IT solutions and app development), managing full marketing stacks end-to-end</li>
+            <li>Planning and launching Google App campaigns across international markets — owning campaign architecture, targeting strategy, creative development, and performance optimization</li>
+            <li>Running Meta and Instagram ad campaigns across multiple markets — managing creative direction, audience segmentation, budget allocation, and continuous CPR improvement</li>
+            <li>Building and maintaining Facebook Pixel and Ads SDK event tracking infrastructure for accurate conversion attribution across key app funnel milestones</li>
+            <li>Developing and executing SEO content strategy — conducting keyword research, producing optimized articles, and monitoring organic performance via Google Search Console</li>
+            <li>Built a multi-agent n8n AI cold email automation system and a YouTube content research AI agent to scale outreach and content operations</li>
+            <li>Managing full Facebook Business Suite, Meta Business Portfolio, and Events Manager across both brands</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tli">
+        <div><div class="tld">Jun 2024 - Jul 2025</div><div class="tlco">Helplama</div><div class="tlloc">India - Remote</div></div>
+        <div>
+          <div class="tlr">Content Strategist — SEO and Growth Marketing</div>
+          <ul class="tlb">
+            <li>Built SEO content strategies improving organic traffic and lead generation</li>
+            <li>Published articles on Helplama and Saufter.io targeting commercial intent keywords</li>
+            <li>Keyword research and competitive analysis using Ahrefs and SEMrush</li>
+            <li>Used AI tools to scale content production while maintaining E-E-A-T quality</li>
+            <li>Tracked performance via Google Analytics 4 and Search Console</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tli">
+        <div><div class="tld">Feb 2021 - May 2024</div><div class="tlco">Self-Employed</div><div class="tlloc">Remote - Freelance</div></div>
+        <div>
+          <div class="tlr">Freelance Growth Marketer and Brand Builder</div>
+          <ul class="tlb">
+            <li>Helped scale IamBolt Gaming YouTube channel through SEO-optimized scripts, metadata strategy, retention analysis, and motion graphics creative</li>
+            <li>Designed promotional creative campaigns for @thevelvetpour bar brand</li>
+            <li>Managed Meta Ads end-to-end: Pixel, events, conversion tracking</li>
+            <li>Built WordPress websites optimized for SEO, performance, and conversions</li>
+            <li>Created email automation flows with Klaviyo and ConvertKit for SaaS brands</li>
+            <li>Deployed AI agents for content generation and ad copy using n8n</li>
+            <li>Produced motion graphics, short-form video, podcast editing, and logos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="slabel r">Credentials</div>
+    <h2 class="stitle r"><span>Certifications</span></h2>
+    <div class="cg r">
+      <div class="cc"><div class="cdot"></div><div class="cn">Google Ads Apps Certification</div><div class="cm">Google Digital Academy — Dec 2025 to Dec 2026</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Facebook Ads &amp; Facebook Marketing 2026</div><div class="cm">Udemy — Jan 2026 · Facebook Ads, Audience Targeting, Campaigns</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Master Reddit Ads</div><div class="cm">Udemy — Jan 2026 · Reddit Marketing &amp; Paid Advertising</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Social Media Marketing Mastery 2025</div><div class="cm">Udemy — Dec 2025 · Ads on 10+ Platforms</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">AI SEO Course 2025: AEO &amp; GEO</div><div class="cm">Udemy — Oct 2025 · AI SEO, AEO, GEO, Page-One Results</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Klaviyo Mastery 3.0</div><div class="cm">Udemy — Sep 2025 · Email Marketing and Automation</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Generative AI Foundations</div><div class="cm">upGrad x Microsoft — Aug 2025</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">Build Full WordPress Website</div><div class="cm">Coursera — Sep 2025 · WordPress Development</div></div>
+      <div class="cc"><div class="cdot"></div><div class="cn">AI Tools and ChatGPT Workshop</div><div class="cm">Be10x — Sep 2025 · AI for Career Development</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="slabel r">Academic</div>
+    <h2 class="stitle r"><span>Education</span></h2>
+    <div class="edu r">
+      <div class="ecard">
+        <div class="euni">Lovely Professional University, Punjab</div>
+        <div class="edeg">Master of Science in Economics</div>
+        <div class="eyr">2021 to 2023 — Full-time</div>
+        <div class="ebadge">CGPA 8.3 / 10</div>
+      </div>
+      <div class="ecard">
+        <div class="euni">Cotton University, Assam</div>
+        <div class="edeg">Bachelor of Arts in Economics</div>
+        <div class="eyr">2016 to 2019 — Full-time</div>
+        <div class="ebadge">CGPA 8.1 / 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cblob"></div>
+  <div class="cwrap">
+    <p class="ctag r">Available for New Opportunities</p>
+    <h2 class="ch r">Let's Build<br/><span>Something</span><br/><span class="or">That Grows</span></h2>
+    <p class="csub r">Open to full-time roles in Growth Marketing, Performance Marketing, or Marketing Automation. Available for remote opportunities worldwide.</p>
+    <div class="cbtns r">
+      <a href="mailto:thehrishikeshkashyap@gmail.com" class="btn-cyan">thehrishikeshkashyap@gmail.com</a>
+      <a href="tel:+917002258167" class="btn-ghost">+91 700 225 8167</a>
+    </div>
+    <div class="crow r">
+      <div><div class="crl">Email</div><div class="crv"><a href="mailto:thehrishikeshkashyap@gmail.com">thehrishikeshkashyap@gmail.com</a></div></div>
+      <div><div class="crl">Phone</div><div class="crv">+91 700 225 8167</div></div>
+      <div><div class="crl">Location</div><div class="crv">Guwahati, Assam, India</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">2026 <span>Hrishikesh Das Kashyap</span></div>
+  <div class="ft">Growth Marketer — <span>Open to</span> <span class="or">Remote Roles</span></div>
+</footer>
+
+<script>
+var cd=document.getElementById('cd'),cr=document.getElementById('cr'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+(function loop(){cd.style.left=mx+'px';cd.style.top=my+'px';rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop);})();
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('on');},i*55);obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.r').forEach(function(el){obs.observe(el);});
+document.querySelectorAll('.mn,.hs-n').forEach(function(el){
+  var txt=el.textContent,n=parseFloat(txt.replace(/[^0-9.]/g,'')),sfx=txt.replace(/[0-9.]/g,'');
+  if(!n)return;
+  var co=new IntersectionObserver(function(entries){if(!entries[0].isIntersecting)return;co.unobserve(el);var s=0;
+    function step(ts){if(!s)s=ts;var p=Math.min((ts-s)/1100,1),ease=1-Math.pow(1-p,3);el.textContent=(n<10?(ease*n).toFixed(1):Math.round(ease*n))+sfx;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);},{threshold:0.5});co.observe(el);});
+</script>
+</body>
+</html>
